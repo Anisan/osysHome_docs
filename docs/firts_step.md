@@ -19,7 +19,7 @@ nav_order: 3
 * Objects (/admin/Objects) - управление объектами умного дома
 * Users (/admin/Users) - управление пользователями и правами доступа
 * Scheduler (/admin/Scheduler) - планировщик задач и автоматизация
-* [Dashboard](./modules/dashboard.md) (/admin/Dashboard) - панель управления
+* [Dashboard]({% link docs/modules/dashboard.md %}) (/admin/Dashboard) - панель управления
 * wsServer (/admin/wsServer) - WebSocket сервер для связи в реальном времени
 
 ## Создание объектов и автоматизации
