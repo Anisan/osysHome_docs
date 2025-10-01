@@ -3,33 +3,106 @@ title: Home
 layout: home
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# osysHome
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+osysHome - это система умного дома, разработанная на Python, которая предоставляет пользователям гибкие и мощные инструменты для автоматизации и управления жилым пространством с акцентом на модульность, безопасность и простоту использования. Архитектура на основе объектно-ориентированного программирования обеспечивает гибкость и масштабируемость для различных сценариев использования.
 
-More specifically, the created site:
+## Ключевые возможности системы
+### 1. Модульная архитектура
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+Система поддерживает динамическую загрузку и управление плагинами через класс PluginsHelper, что обеспечивает:
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+* Обнаружение плагинов во время выполнения
+* Управление жизненным циклом плагинов без перезапуска системы
+* Конфигурацию для каждого плагина отдельно
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+### 2. Поддержка различных протоколов связи
 
-To get started with creating a site, simply:
+Система обеспечивает интеграцию с различными устройствами и протоколами, включая MQTT и другие стандарты умного дома.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+### 3. Объектно-ориентированная модель умного дома
+Ядро osysHome - это система управления объектами, которая предоставляет:
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+* Динамическое создание объектов с настраиваемыми свойствами и методами
+* Управление свойствами с отслеживанием истории изменений
+* Выполнение пользовательского Python-кода в контексте объектов
+* Потокобезопасные операции для одновременного доступа
 
-----
+### 4. Веб-интерфейс управления
+Система предоставляет комплексный веб-интерфейс с возможностями:
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+* Административная панель для конфигурации и мониторинга
+* Обновления в реальном времени через WebSocket
+* Многоязычная поддержка с переключением языков
+* Ролевая система контроля доступа
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+### 5. RESTful API
+Полнофункциональный API для внешней интеграции с автоматической документацией через Swagger и поддержкой аутентификации по API-ключам.
+
+### 6. Система автоматизации и скриптов
+Поддержка с возможностями планирования задач на основе cron и выполнения пользовательских скриптов.
+
+### 7. Безопасность и конфиденциальность
+Обеспечивает:
+
+* Хеширование паролей с использованием werkzeug
+* Отслеживание попыток входа с логированием IP-адресов
+* Иерархическую систему ролей (root, admin, editor, user)
+
+## Технические характеристики
+
+### Основные технологии:
+
+* **Язык программирования**: Python
+* **Веб-фреймворк**: Flask
+* **База данных**: SQLAlchemy (Postgres, MySQL, Sqlite)
+* **API**: RESTful API
+* **Реальное время**: WebSocket
+
+## Рекомендуемые модули
+Система поставляется с набором рекомендуемых плагинов:
+
+* Modules - интерфейс управления модулями
+* Objects - определение и управление объектами
+* Users - аутентификация и авторизация пользователей
+* Scheduler - планирование задач на основе cron
+* Dashboard - веб-интерфейс панели управления
+* wsServer - реализация WebSocket сервера
+* Mqtt - поддержка протокола MQTT
+
+### Обширная библиотека модулей
+Помимо рекомендуемых базовых модулей, osysHome предлагает богатую экосистему дополнительных плагинов, организованных по категориям :
+
+#### Системные модули
+* Монитор консоли - мониторинг системных процессов в реальном времени
+* Файлы логов - централизованное управление и просмотр логов системы
+* Хранилище - система управления данными и резервного копирования
+* XRAY - система диагностики и мониторинга производительности
+#### Интеграция с устройствами
+* ESPHome - интеграция с микроконтроллерами ESP32/ESP8266
+* HisenseTv - управление телевизорами Hisense
+* Keenetic - интеграция с роутерами Keenetic
+* OpenHasp - интеграция с сенсорными панелями OpenHASP
+* ThinQ - поддержка устройств LG ThinQ
+* Xiaomi miIO - управление устройствами Xiaomi через протокол miIO
+* XiaomiHome - интеграция с экосистемой Xiaomi Smart Home
+* Yandex Devices - поддержка устройств Яндекс.Станция и других
+* Zigbee2mqtt - интеграция с Zigbee-устройствами через MQTT
+#### Приложения и сервисы
+* Друзья 2GIS - интеграция с картографическими сервисами 2GIS
+* GPS-трекер - отслеживание местоположения и геозоны
+* Telegram Бот - управление системой через Telegram
+* Todo - система управления задачами и напоминаниями
+* Яндекс Дом - интеграция с экосистемой Яндекс.Дом
+* YandexTTS - синтез речи через сервисы Яндекс
+* osysBoard - специализированная панель управления
+
+## Расширяемость и интеграция
+Поддерживает:
+* Архитектуру плагинов с поддержкой различных типов действий
+* Интеграцию с Flask Blueprint для веб-маршрутов
+* Систему событий для изменений свойств и автоматизации
+
+## Многоязычная поддержка
+osysHome поддерживает интернационализацию с возможностью переключения языков через параметры URL или настройки браузера.
+

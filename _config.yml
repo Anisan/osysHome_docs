@@ -1,6 +1,9 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: osysHome
+description: Документация osysHome
 theme: just-the-docs
+logo: "/assets/images/logo.png"
+
+search_enabled: true
 
 url: https://just-the-docs.github.io
 
