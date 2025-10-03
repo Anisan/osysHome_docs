@@ -36,7 +36,7 @@ nav_order: 5
 ## Практические примеры шаблонов
 ### Шаблон класса Users
 В системе есть встроенный шаблон для отображения пользователей
-```html
+```jinja
 <div class="row">  
     {% if object.image %}  
     <img class="col pe-0" src="{{object.image}}" style="width:auto;height:80px;object-fit:contain;" alt="{{object.name}}">  
