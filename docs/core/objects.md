@@ -2,6 +2,7 @@
 title: Объекты
 layout: home
 parent: Архитектура
+nav_order: 2
 ---
 
 # Объекты в osysHome

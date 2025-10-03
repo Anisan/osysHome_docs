@@ -2,6 +2,7 @@
 title: Классы
 layout: home
 parent: Архитектура
+nav_order: 1
 ---
 
 # Классы в osysHome

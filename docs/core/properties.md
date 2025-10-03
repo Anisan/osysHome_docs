@@ -2,6 +2,7 @@
 title: Свойства
 layout: home
 parent: Архитектура
+nav_order: 3
 ---
 
 # Cвойства в osysHome
