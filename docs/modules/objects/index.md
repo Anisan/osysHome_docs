@@ -1,5 +1,5 @@
 ---
-title: Объекты
+title: "Объекты"
 layout: home
 parent: Модули
 ---
